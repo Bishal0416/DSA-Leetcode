@@ -11,19 +11,15 @@
  */
 class Solution {
 public:
-    bool calculate(TreeNode* root){
+    bool evaluateTree(TreeNode* root) {
 
         if(root->left == NULL && root->right == NULL){
             return root->val;
         }
 
-        bool val1 = calculate(root->left);
-        bool val2 = calculate(root->right);
+        bool val1 = evaluateTree(root->left);
+        bool val2 = evaluateTree(root->right);
 
         return root->val == 2 ? val1 || val2 : val1 && val2;
-    } 
-    bool evaluateTree(TreeNode* root) {
-        bool res = calculate(root);
-        return res;
     }
 };
