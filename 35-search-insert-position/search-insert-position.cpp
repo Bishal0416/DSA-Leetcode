@@ -5,8 +5,7 @@ public:
         int lb = 0;
         int ub = nums.size() - 1;
         int mid;
-        if(target < nums[0]) return 0;
-        if(target > nums[ub]) return nums.size();
+
         while( lb <= ub ){
             mid = lb + (ub - lb ) / 2;
             if(nums[mid] == target){
